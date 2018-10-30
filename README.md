@@ -82,3 +82,7 @@ Les _XPath_ suivants sont diponibles :
 * `/root/results/exe_msg_en` : Phrase de compte rendu d'éxecution en Anglais
 * `/root/results/exeCount` : Nombre d'exécution effectivement réalisées
 * `/root/results/executions` : Détails des exécutions réalisées au format `pid`+`val`
+
+## Aide suplémentaire
+
+Voir le forum : [Forum eedomus/Mass Switch](https://forum.eedomus.com/viewtopic.php?f=50&t=7669)
