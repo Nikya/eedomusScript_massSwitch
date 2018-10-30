@@ -19,19 +19,19 @@
         },
         {
             "parameter": "toOff",
-            "description": "Liste de periphId à positionner à off (0) (séparés par des vigules)",
+            "description": "Liste de periphId à positionner à off (0) (séparés par des virgules)",
             "xtype": "textfield",
             "field": "allowBlank:true, regex:/\\d+,?/, regexText:'Format attendue \\'99999,999999,...\\' ' "
         },
         {
             "parameter": "toOn",
-            "description": "Liste de periphId à positionner à On (100) (séparés par des vigules)",
+            "description": "Liste de periphId à positionner à On (100) (séparés par des virgules)",
             "xtype": "textfield",
             "field": "allowBlank:true, regex:/\\d+,?/, regexText:'Format attendue \\'99999,999999,...\\' ' "
         },
         {
             "parameter": "toVal",
-            "description": "Liste de periphId à positionner à la valeur donnée (Suivi d'un ':' et la valeur cible puis tous séparés par des vigules)",
+            "description": "Liste de periphId à positionner à la valeur donnée (Suivi d'un ':' et la valeur cible puis tous séparés par des virgules)",
             "xtype": "textfield",
             "field": "allowBlank:true, regex:/\\d+:\\d,?/, regexText:'Format attendue \\'99999:33,999999:66,...\\' ' "
         }
@@ -59,7 +59,7 @@
             "values": [
                 {
                     "value": "100",
-                    "description": "iMasse off",
+                    "description": "Masse off (intelligent)",
                     "icon": "nikya_masswitch.png",
                     "http_url": "http://localhost/script/",
                     "http_type": "GET",
@@ -67,7 +67,7 @@
                 },
                 {
                     "value": "200",
-                    "description": "iMasse on",
+                    "description": "Masse on (intelligent)",
                     "icon": "nikya_masswitch.png",
                     "http_url": "http://localhost/script/",
                     "http_type": "GET",
@@ -75,7 +75,7 @@
                 },
                 {
                     "value": "300",
-                    "description": "iMasse valeur",
+                    "description": "Masse valeur (intelligent)",
                     "icon": "nikya_masswitch.png",
                     "http_url": "http://localhost/script/",
                     "http_type": "GET",
@@ -83,7 +83,7 @@
                 },
                 {
                     "value": "110",
-                    "description": "Force masse off",
+                    "description": "Masse off (forcé)",
                     "icon": "nikya_masswitch.png",
                     "http_url": "http://localhost/script/",
                     "http_type": "GET",
@@ -91,7 +91,7 @@
                 },
                 {
                     "value": "210",
-                    "description": "Force masse on",
+                    "description": "Masse on (forcé)",
                     "icon": "nikya_masswitch.png",
                     "http_url": "http://localhost/script/",
                     "http_type": "GET",
@@ -99,7 +99,7 @@
                 },
                 {
                     "value": "310",
-                    "description": "Force masse valeur",
+                    "description": "Masse valeur (forcé)",
                     "icon": "nikya_masswitch.png",
                     "http_url": "http://localhost/script/",
                     "http_type": "GET",
