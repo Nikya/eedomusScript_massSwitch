@@ -1,0 +1,111 @@
+{
+    "plugin_id": "mass_switch",
+    "name_fr": "Commutateur en masse",
+    "name_en": "Mass Switcher",
+    "icon": "nikya_masswitch.png",
+    "version": "1.0",
+    "creation_date": "2018-10-29",
+    "modification_date": "2018-10-29",
+    "author": "<a href='https://github.com/Nikya' target='_blank'>Nikya</a>",
+    "description_fr": "Commuter en masse plusieurs équipements",
+    "description_en": "Massively switch multiple equipment",
+    "forum_link": "http://forum.eedomus.com/viewtopic.php?f=999&t=999",
+    "parameters": [
+        {
+            "parameter": "help_url",
+            "description": "Documentation projet",
+            "xtype": "displayfield",
+            "field": "style: 'padding: 3px;', value: '<a target=\\'_blank\\' href=\\'https://github.com/Nikya/eedomusScript_massSwitch'>Github/Nikya/Mass Switch</a>'"
+        },
+        {
+            "parameter": "toOff",
+            "description": "Liste de periphId à positionner à off (0) (séparés par des vigules)",
+            "xtype": "textfield",
+            "field": "allowBlank:true, regex:/\\d+,?/, regexText:'Format attendue \\'99999,999999,...\\' ' "
+        },
+        {
+            "parameter": "toOn",
+            "description": "Liste de periphId à positionner à On (100) (séparés par des vigules)",
+            "xtype": "textfield",
+            "field": "allowBlank:true, regex:/\\d+,?/, regexText:'Format attendue \\'99999,999999,...\\' ' "
+        },
+        {
+            "parameter": "toVal",
+            "description": "Liste de periphId à positionner à la valeur donnée (Suivi d'un ':' et la valeur cible puis tous séparés par des vigules)",
+            "xtype": "textfield",
+            "field": "allowBlank:true, regex:/\\d+:\\d,?/, regexText:'Format attendue \\'99999:33,999999:66,...\\' ' "
+        }
+    ],
+    "scripts": [
+        {
+            "name": "massSwitch.php"
+        }
+    ],
+    "devices": [
+        {
+            "device_id": "massSwitch",
+            "module_id": "41",
+            "type": "http",
+            "name_fr": "plugin.name",
+            "icon": "nikya_masswitch.png",
+            "utilisation_id": "43",
+            "parameters": {
+                "value_type": "list",
+                "ignore_errors": 3,
+                "VAR1": "plugin.parameters.toOff",
+                "VAR2": "plugin.parameters.toOn",
+                "VAR3": "plugin.parameters.toVal"
+            },
+            "values": [
+                {
+                    "value": "100",
+                    "description": "iMasse off",
+                    "icon": "nikya_masswitch.png",
+                    "http_url": "http://localhost/script/",
+                    "http_type": "GET",
+                    "http_params": "?toOff=[VAR1]"
+                },
+                {
+                    "value": "200",
+                    "description": "iMasse on",
+                    "icon": "nikya_masswitch.png",
+                    "http_url": "http://localhost/script/",
+                    "http_type": "GET",
+                    "http_params": "?toOn=[VAR2]"
+                },
+                {
+                    "value": "300",
+                    "description": "iMasse valeur",
+                    "icon": "nikya_masswitch.png",
+                    "http_url": "http://localhost/script/",
+                    "http_type": "GET",
+                    "http_params": "?toVal=[VAR3]"
+                },
+                {
+                    "value": "110",
+                    "description": "Force masse off",
+                    "icon": "nikya_masswitch.png",
+                    "http_url": "http://localhost/script/",
+                    "http_type": "GET",
+                    "http_params": "?toOff=[VAR1]&force=true"
+                },
+                {
+                    "value": "210",
+                    "description": "Force masse on",
+                    "icon": "nikya_masswitch.png",
+                    "http_url": "http://localhost/script/",
+                    "http_type": "GET",
+                    "http_params": "?toOn=[VAR2]&force=true"
+                },
+                {
+                    "value": "310",
+                    "description": "Force masse valeur",
+                    "icon": "nikya_masswitch.png",
+                    "http_url": "http://localhost/script/",
+                    "http_type": "GET",
+                    "http_params": "?toVal=[VAR3]&force=true"
+                }
+            ]
+        }
+    ]
+}
