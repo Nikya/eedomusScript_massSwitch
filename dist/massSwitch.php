@@ -7,7 +7,7 @@
 * Origine : https://github.com/Nikya/eedomusScript_massSwitch
 *******************************************************************************/
 
-/**DEV EMULATOR*/ require_once ("eedomusScriptsEmulator.php");
+/**DEV EMULATOR*/ // require_once ("eedomusScriptsEmulator.php");
 
 /** ***************************************************************************
 * Init
